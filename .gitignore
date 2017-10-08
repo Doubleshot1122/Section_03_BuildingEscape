@@ -12,3 +12,10 @@ BuildingEscape/Content/StarterContent/
 # VS Generated Files
 #####################
 *.VC.db
+*.VC.opendb
+#####################
+# X Code Generated Files
+#####################
+**/xcuserdata
+*contents.xcworkspacedata
+*.xcodeworks
