@@ -23,6 +23,8 @@ protected:
 
 	void OpenDoor();
 
+	void CloseDoor();
+
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
@@ -30,11 +32,16 @@ public:
 private:
 	// UPROPERTY's are macros, they will appear in the unreal interface
 	UPROPERTY(VisibleAnywhere)
-		float OpenAngle = 90.0f;
+		float OpenAngle = -10.f;
 
 	UPROPERTY(EditAnywhere)
 		ATriggerVolume* PressurePlate;
 
-	//UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere)
+		float DoorCloseDelay = 1.f;
+		
+	float LastDoorOpenTime;
+	AActor* Owner; // The owning door
+
 		AActor* ActorThatOpens; //Remember pawn inherits from actor
 };
